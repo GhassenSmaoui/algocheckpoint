@@ -1,0 +1,25 @@
+ALGORITHM CHECKPOINT
+VAR
+sentence : string
+i, words, vowels , characters : Integer :=0;
+c : char 
+BEGIN
+
+Read(sentence)
+
+Repeat
+c:= sentence[i]
+characters :=characters+1;
+if (c in 'aouiyeAOUIYE') THEN
+vowels:=vowels+1;
+END.IF
+if (c==' ') THEN
+words := words +1;
+END.IF
+i=i+1;
+UNTIL (sentence[i]=='.')
+Write('number of vowels is', vowels);
+Write('number of words is', words);
+Write('number of characters is', characters);
+END
+

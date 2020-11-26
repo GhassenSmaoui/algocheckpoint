@@ -1,0 +1,72 @@
+ALGORITHM DISTINCT
+VAR
+
+i, j, sum : Integer :=0;
+
+set1, set2 : ARRAY_OF Integer[5];
+flag : BOOLEAN;
+BEGIN
+
+Read(set1)
+Read(set2)
+
+FOR i FROM 0 TO 4 STEP step  DO 
+flag = flase;
+FOR j FROM 0 TO 4 STEP step  DO 
+
+if (set1[i]==set2[j]) THEN
+flag = true;
+END.IF
+if flag = false THEN
+
+sum:=sum+set1[i]
+END.IF
+
+END_FOR
+END_FOR
+
+FOR i FROM 0 TO 4 STEP step  DO 
+flag = flase;
+FOR j FROM 0 TO 4 STEP step  DO 
+
+if (set2[i]==set1[j]) THEN
+flag = true;
+END.IF
+if flag = false THEN
+
+sum:=sum+set2[i]
+END.IF
+
+END_FOR
+END_FOR
+write('the sum of distinc elements is',sum)
+
+END
+
+===========================================================
+
+ALGORITHM COMMON
+VAR
+
+i, j, sum : Integer :=0;
+
+set1, set2 : ARRAY_OF Integer[5];
+
+
+BEGIN
+
+Read(set1)
+Read(set2)
+
+FOR i FROM 0 TO 4 STEP step  DO 
+
+FOR j FROM 0 TO 4 STEP step  DO 
+
+if (set1[i]==set2[j]) THEN
+sum:= sum + set1[i];
+bark;
+END.IF
+
+
+END_FOR
+END_FOR

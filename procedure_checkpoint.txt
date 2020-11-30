@@ -1,0 +1,78 @@
+
+
+PROCEDURE dot_product(v1,v2 : ARRAY_OF Float, var ps :float)
+VAR 
+ps : float :=0;
+BEGIN
+FOR i FROM 0 TO length(v1)-1   DO 
+
+ps:= ps + v1[i]*v2[i];
+
+
+END_FOR
+END
+
+ALGORITHM produit_scalaire
+VAR
+   n: INTEGER
+   ps : float :=0;
+BEGIN
+
+write ("donner la longueur du vecteur");
+read(n)
+FOR i FROM 0 TO length(v1)-1   DO 
+write ("donner la valeur",i, "du vecteur v1")
+read(v1[i])
+write ("donner la valeur",i, "du vecteur v2")
+read(v2[i])
+END_FOR
+
+dot_product(v1,v2,ps);
+if (ps ==0) THEN
+write('the verctors are orthogonal')
+ELSE
+write('the vectors are not orthogonal')
+END.IF
+
+
+END
+================================using function===========
+
+FUNCTION scalaire(v1,v2:array_of Float) : float
+VAR
+    scalaire : flaot :=0
+BEGIN
+ 
+FOR i FROM 0 TO length(v1)-1   DO 
+
+scalaire:= scalaire + v1[i]*v2[i];
+
+
+END_FOR   
+    RETURN scalaire ;
+END
+
+ALGORITHM produit_scalaire_using_function
+VAR
+   n: INTEGER
+   ps : float :=0;
+BEGIN
+
+write ("donner la longueur du vecteur");
+read(n)
+FOR i FROM 0 TO length(v1)-1   DO 
+write ("donner la valeur",i, "du vecteur v1")
+read(v1[i])
+write ("donner la valeur",i, "du vecteur v2")
+read(v2[i])
+END_FOR
+
+
+if (scalaire(v1,v2==0)) THEN
+write('the verctors are orthogonal')
+ELSE
+write('the vectors are not orthogonal')
+END.IF
+
+
+END

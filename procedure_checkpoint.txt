@@ -1,0 +1,30 @@
+
+
+PROCEDURE dot_product(v1,v2 : ARRAY_OF Float, var ps :float)
+VAR 
+ps : float :=0;
+BEGIN
+FOR i FROM 0 TO length(v1)   DO 
+
+ps:= ps + v1[i]*v2[i];
+
+
+END_FOR
+END
+
+ALGORITHM produit_scalaire
+VAR
+   myData : INTEGER := 20;
+   ps : float :=0;
+BEGIN
+Read(v1)
+Read(v2)
+dot_product(v1,v2,ps);
+if (ps ==0) THEN
+write('the verctors are orthogonal')
+ELSE
+write('the vectors are not orthogonal')
+END.IF
+
+
+END

@@ -1,0 +1,56 @@
+
+PROCEDURE translate(VAR tab : ARRAY_OF INTEGER, i, elt, pos : INTEGER)
+
+BEGIN  
+ WHILE (i >= pos) DO
+       tab[i+1] := tab[i]; // translation from left to right
+       j := j-1; // update index
+   END_WHILE
+
+   tab[pos] := elt;
+END
+======================================================================
+FUNCTION search_position(arr : ARRAY_OF INTEGER, x,i: INTEGER) : INTEGER
+VAR
+   j: INTEGER;
+BEGIN
+IF (arr[0] > x) THEN
+           RETURN 0;
+END_IF
+FOR j FROM 0 TO i-1 STEP 1 DO
+IF (arr[j] > x) AND (arr[j+1]<=x) THEN
+ RETURN j;
+ELSE 
+RETURN i;
+END_IF
+END_FOR
+END
+======================================================================
+PROCEDURE swap(VAR xp, VAR yp : INTEGER)
+VAR
+   tmp : INTEGER;
+BEGIN
+  tmp := xp;
+  xp := yp;
+  yp := tmp;
+END
+=======================================================================
+ALGORITHM sort_checkpoint
+VAR
+   arr : ARRAY_OF INTEGER
+  
+BEGIN
+IF (arr[0] > arr[1]) THEN
+swap(arr[0], arr[1]);
+END_IF
+FOR j FROM 2 TO arr.length STEP 1 DO
+pos = search_position(arr , arr[i], i-1);
+translate(arr, i, arr[i], pos);
+END_FOR
+END
+
+
+ 
+
+
+
